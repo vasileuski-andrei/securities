@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+moex:
+  stock:
+    url: "https://iss.moex.com/iss/engines/stock/markets/shares/securities.xml?iss.meta=off&iss.only=securities&securities.columns=SECID,PREVPRICE,SHORTNAME"
