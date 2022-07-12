@@ -1,5 +1,6 @@
 package com.starlight.stockmoex.controller
 
+import com.starlight.stockmoex.model.Stock
 import com.starlight.stockmoex.service.StockService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -12,7 +13,7 @@ class StockController {
     StockService stockService;
 
     @GetMapping("/stock")
-    String getStock() {
+    List<Stock> getStock() {
         return stockService.getStockFromMoex()
     }
 }
