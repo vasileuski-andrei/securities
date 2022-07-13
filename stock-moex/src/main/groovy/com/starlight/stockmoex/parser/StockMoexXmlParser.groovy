@@ -34,21 +34,28 @@ class StockMoexXmlParser implements Parser {
                 def element = (Element) node
                 String secid =  element.getAttribute("SECID")
                 String boardid =  element.getAttribute("BOARDID")
-                String prevprice = element.getAttribute("PREVPRICE")
-                String shortname = element.getAttribute("SHORTNAME")
-                String prevdate = element.getAttribute("PREVDATE")
+                String date = element.getAttribute("SYSTIME")
+                String updateTime = element.getAttribute("ISSUECAPITALIZATION_UPDATETIME")
+                String open = element.getAttribute("OPEN")
+                String low = element.getAttribute("LOW")
+                String high = element.getAttribute("HIGH")
+                String last = element.getAttribute("LAST")
 
-                if(!secid.isEmpty() && !prevprice.isEmpty() && !shortname.isEmpty()) {
+                if(!secid.isEmpty() && !open.isEmpty() && !last.isEmpty()) {
                     def stock = Stock.builder()
                             .id(secid)
                             .boardid(boardid)
-                            .price(Double.parseDouble(prevprice))
-                            .name(shortname)
-                            .date(prevdate)
+                            .date(date)
+                            .updateTime(updateTime)
+                            .open(open as Double)
+                            .low(low as Double)
+                            .high(high as Double)
+                            .last(last as Double)
                             .build()
 
                     stockList.add(stock)
                 }
+
             }
         }
 

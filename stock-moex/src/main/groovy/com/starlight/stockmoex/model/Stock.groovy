@@ -9,7 +9,10 @@ class Stock {
 
     String id
     String boardid
-    Double price
-    String name
     String date
+    String updateTime
+    Double open
+    Double low
+    Double high
+    Double last
 }
