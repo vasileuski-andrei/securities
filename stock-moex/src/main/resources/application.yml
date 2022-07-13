@@ -1,6 +1,14 @@
 server:
-  port: 8080
+  port: 0
 
+spring:
+  application:
+    name: stock-moex
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 moex:
   stock:
     url: "https://iss.moex.com/iss/engines/stock/markets/shares/securities.xml?iss.meta=off&iss.only=securities&securities.columns=SECID,BOARDID,PREVPRICE,SHORTNAME,PREVDATE"

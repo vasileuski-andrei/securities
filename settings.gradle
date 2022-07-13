@@ -1,2 +1,5 @@
 rootProject.name = 'securities'
+includeBuild 'eureka-server'
+includeBuild 'api-gateway'
+includeBuild 'stock-moex'
 
