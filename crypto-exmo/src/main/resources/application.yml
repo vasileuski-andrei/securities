@@ -1,1 +1,3 @@
-
+exmo:
+  crypto:
+    url: "https://api.exmo.com/v1.1/ticker"
