@@ -13,7 +13,8 @@ public class CryptoController {
 
     @GetMapping("/coins")
     public String getAllCoins() {
-        return cryptoService.getAllCoinsFromExmoExchange();
+//        return cryptoService.getAllCoinsFromExmoExchange();
 
+        return "YES";
     }
 }

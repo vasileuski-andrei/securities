@@ -1,3 +1,17 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: crypto-exmo
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
 exmo:
   crypto:
     url: "https://api.exmo.com/v1.1/ticker"
